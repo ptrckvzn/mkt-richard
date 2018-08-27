@@ -7,10 +7,6 @@ import router from './router'
 import VueFullPage from 'vue-fullpage.js'
 Vue.use(VueFullPage)
 
-var showdown = require('showdown')
-var converter = new showdown.Converter()
-Object.defineProperty(Vue.prototype, '$converter', { value: converter })
-
 Vue.config.productionTip = false
 
 router.afterEach((to, from) => {
