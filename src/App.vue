@@ -56,8 +56,8 @@ let contents = [
     path: '/static/videos/'
   },
   {
-    type: 'video',
-    name: 'richard_greensauce.mov',
+    type: 'image',
+    name: 'richard_greensauce.png',
     path: '/static/videos/'
   },
   {
@@ -116,6 +116,8 @@ export default {
   },
   mounted () {
     if (this.$route.name !== 'index') this.showNav = true
+    let foo = document.querySelector('[href="http://alvarotrigo.com/fullPage/extensions/"]')
+    if (foo) { foo.parentElement.style = 'display:none' }
   },
   methods: {
     switchLang () {
