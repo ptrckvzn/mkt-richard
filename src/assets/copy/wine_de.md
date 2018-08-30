@@ -1,8 +1,4 @@
 ## WEIN
 
-In unserer Weinauswahl erkennen Sie  
-bla bla blubb, einen Hang zum bli bla blubb und  
-vor allem eine blibblablubb.  
-bitte sehen Sie hier unsere Weinkarte ein.  
-Sehen Sie hier unsere Weinkarte ein.  
-(link to a pdf in extra window)
+
+Bitte Sehen Sie hier unsere <a href="/static/wine.pdf" target="_blank"><u>Weinkarte</u></a> ein.

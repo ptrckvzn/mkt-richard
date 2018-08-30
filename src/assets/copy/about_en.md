@@ -1,4 +1,5 @@
-# ABOUT US
+## ABOUT US
+
 Our wish is an atmosphere that makes it easy
 for you to see the Nice, to taste the Fine
 and simply be comfortable.

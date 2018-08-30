@@ -1,4 +1,3 @@
 ## PRESS
 
-For press inquiries please contact [mail@restaurant-richard.de](mailto:mail@restaurant-richard.de)  
-or download our press-kit.
+For press inquiries please contact <u>[mail@restaurant-richard.de](mailto:mail@restaurant-richard.de)</u>

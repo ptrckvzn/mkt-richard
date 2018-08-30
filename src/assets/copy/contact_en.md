@@ -1,39 +1,48 @@
 ## CONTACT
 
-**Köpenicker Str. 174**
+**[Köpenicker Str. 174  
+10997 Berlin, Germany](https://goo.gl/maps/b3Jp7LKoGK52)**
 
-**10997 Berlin, Germany**
+For Reservations  
+with more than 7 Guests  
+please contact us  
+per mail or phone.
 
-**(link to google-maps)**
-
-For Reservations with more than 7 Guests
-
-please contact us per mail or phone.
-
-**Telefon** **+49 30 492 072 42**
+**Telephone** **[+49 30 492 072 42](tel:+493049207242)**
 
 **[rsvp@restaurant-richard.de](mailto:rsvp@restaurant-richard.de)**
-
+<br>
+<br>
+<br>
 **Subscribe to our Mailinglist**
 
-(„field for e-mail-entry)
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://restaurant-richard.us15.list-manage.com/subscribe/post?u=a092c2267a385edb1128004ae&amp;id=a89f08624c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
 
-black button: „Subscribe"
+<div class="mc-field-group">
+	<input type="email" value=""  name="EMAIL" class="required email" id="mce-EMAIL"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a092c2267a385edb1128004ae_a89f08624c" tabindex="-1" value=""></div>
 
-**We‘re closed**
+</form>
+</div>
 
-December 25th -30th, 2018
+<!--End mc_embed_signup-->
+<br>
 
-New Years 01.01.2019
+<u>**[Instagram](https://www.instagram.com/restaurantrichard/)**</u> & <u>**[Facebook](https://www.facebook.com/RESTAURANT.RICHARD.BERLIN/)**</u>
+<br>
+<br>
 
-August 05th - 2nd of September.2019 
+**we'll be closed:**
 
-December 25th -30th, 2019
-
-**Instagram** 
-
-restaurantrichard
-
-**Facebook** 
-
-Restaurant Richard
+Dec 25th — 30th, 2018  
+Jan 1st, 2019  
+Aug 5th — Sept 2nd 2019  
+Dec 25th — 30th, 2019

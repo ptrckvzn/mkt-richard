@@ -17,17 +17,20 @@ UND SAUCE COTES DU JURA
 UND ARTISCHOCKE
 Sauce Bouillabaise
 
-*ODER*
+_ODER_
 
-**ENTRECÔTE VOM BLACK ANGUS RIND**  
+**ENTRECÔTE  
+VOM BLACK ANGUS RIND**  
 MIT FENCHEL TAJINE UND TAGGIASCA OLIVE
 
 **KÄSEAUSWAHL**
 
-**DESSERT VON KIRSCHE**
-
+**DESSERT VON KIRSCHE**  
 **UND SCHOKOLADE**
+<br>
+<br>
+<br>
+_4 Gänge 68 € / 5 Gänge 82 €_  
+_6 Gänge 92 € / 7 Gänge 100 €_  
 
-*4 Gänge 68 Euro / 5 Gänge 82 Euro*
-*6 Gänge 92 Euro / 7 Gänge 100 Euro*
-*Alle Preise in Euro inklusive gesetzlicher Mehrwertsteuer.
+\*Alle Preise in Euro inklusive gesetzlicher Mehrwertsteuer.

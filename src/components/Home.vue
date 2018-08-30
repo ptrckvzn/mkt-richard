@@ -1,16 +1,27 @@
 <template>
-  <div >
+  <div id="home">
     <div id="nav" class="home nav-section">
-      <a href="#" id="back-button" @click.prevent="clickBack">back</a>
+      <div  :class="arrow" id="back-button" @click="clickBack"><img  src="/static/img/arrow.png"></div>
       <div class="allLinks">
-        <div v-for="(section, i) in sections" :key="i" >
-          <router-link  :to="section.nav">{{section.name[lang]}}</router-link>
+        <div class="logo">
+          <img src="/static/img/logo.png">
+        </div>
+        <div class="link-group" v-for="(group) in sections"  >
+          <div v-for="(section, i) in group" >
+            <router-link  :to="section.nav">{{section.name[lang]}}</router-link>
+          </div>
+        </div>
+        <div class="link-group">
+          <img src="/static/img/star.png">
+          <img src="/static/img/hat.png">
         </div>
       </div>
       <div class="allSections">
-        <section class="nav-section" v-for="(section, i) in sections" :key="i + i" :id="section.nav">
-          <item :lang="lang" :md="section.nav"  />
-        </section>
+        <template v-for="(group) in sections"  >
+          <section class="nav-section" v-for="(section) in group" :id="section.nav">
+            <item :lang="lang" :md="section.nav"  />
+          </section>
+        </template>
       </div>
     </div>
   </div>
@@ -23,86 +34,107 @@ export default {
   name: 'Home',
   data () {
     return {
+      atTop: true,
       routeName: null,
       sections: [
-        {
-          nav: 'about',
-          name: {
-            de: 'Über uns',
-            en: 'About'
+        [
+          // {
+          //   nav: 'about',
+          //   name: {
+          //     de: 'Über uns',
+          //     en: 'About'
+          //   }
+          // },
+          {
+            nav: 'menu',
+            component: 'MenuComponent',
+            name: {
+              de: 'Aktuelles Menu',
+              en: 'CURRENT MENU'
+            }
+          },
+          {
+            nav: 'veg',
+            name: {
+              de: 'Vegetarisches Menu',
+              en: 'VEGETARIAN MENU'
+            }
+          },
+          {
+            nav: 'wine',
+            name: {
+              de: 'Weinkarte',
+              en: 'Wine'
+            }
           }
-        },
-        {
-          nav: 'menu',
-          component: 'MenuComponent',
-          name: {
-            de: 'Aktuelles Menu',
-            en: 'CURRENT MENU'
+        ],
+        [
+          {
+            nav: 'opening',
+            name: {
+              de: 'Öffnungszeiten',
+              en: 'OPENING HOURS'
+            }
+          },
+          {
+            nav: 'contact',
+            name: {
+              de: 'Kontakt & Reservierung',
+              en: 'CONTACT & RESERVATIONS'
+            }
           }
-        },
-        {
-          nav: 'veg',
-          name: {
-            de: 'Vegetarisches Menu',
-            en: 'VEGETARIAN MENU'
+        ],
+        [
+          {
+            nav: 'press',
+            name: {
+              de: 'Presse',
+              en: 'Press'
+            }
+          },
+          {
+            nav: 'jobs',
+            name: {
+              de: 'Jobs',
+              en: 'Jobs'
+            }
           }
-        },
-        {
-          nav: 'wine',
-          name: {
-            de: 'Weinkarte',
-            en: 'Wine'
+        ],
+        [
+          {
+            nav: 'impressum',
+            name: {
+              de: 'Impressum',
+              en: 'IMPRESS'
+            }
+          },
+          {
+            nav: 'datenschutz',
+            name: {
+              de: 'Datenschutz',
+              en: 'LEGAL TERMS'
+            }
           }
-        },
-        {
-          nav: 'opening',
-          name: {
-            de: 'Öffnungszeiten',
-            en: 'OPENING HOURS'
-          }
-        },
-        {
-          nav: 'contact',
-          name: {
-            de: 'Kontakt & Reservierung',
-            en: 'CONTACT & RESERVATIONS'
-          }
-        },
-        {
-          nav: 'press',
-          name: {
-            de: 'Presse',
-            en: 'Press'
-          }
-        },
-        {
-          nav: 'jobs',
-          name: {
-            de: 'Jobs',
-            en: 'Jobs'
-          }
-        },
-        {
-          nav: 'impressum',
-          name: {
-            de: 'Datenschutz & Impressum',
-            en: 'IMPRESS & LEGAL TERMS'
-          }
-        }
+        ]
       ]
     }
   },
   props: ['lang'],
   methods: {
     clickBack () {
-      console.log(this.$route)
       if (this.$route.path === '/nav') {
         this.$emit('closeNav')
         this.$router.push('/')
       } else {
         this.$router.push('/nav')
       }
+      // this.atTop = true
       return false
+    }
+  },
+  computed: {
+    arrow () {
+      return {'rotate': !this.atTop}
     }
   },
   components: {
@@ -116,13 +148,21 @@ export default {
       new Waypoint({
         element: continuousElements[i],
         offset: 25,
-        handler () {
+        handler (dir) {
+          vm.atTop = this.element.id === 'nav' || (this.element.id === 'menu' && dir === 'up')
           global.noscroll = true
           setTimeout(() => {
             global.noscroll = false
           }, 1000)
           if (global.nowaypoint) return
-          vm.$router.replace(this.element.id)
+          if (vm.$parent.showNav || this.element.id !== 'nav') {
+            if (dir === 'down') {
+              vm.$router.replace(this.element.id)
+            } else {
+              console.log(this)
+              vm.$router.replace(this.element.id)
+            }
+          }
         },
         context: document.getElementById('nav')
       })
@@ -130,7 +170,7 @@ export default {
   },
   destroyed () {
     // eslint-disable-next-line
-    Waypoint.destroyAll();
+    Waypoint.destroyAll()
   }
 }
 </script>
@@ -141,22 +181,71 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 480px;
+  width: 100%;
+  max-width: 480px;
   background-color: white;
   height: 100vh;
   overflow: auto;
   z-index: 2;
+  word-wrap: break-word;
+  transition: transform 250ms ease;
+  transform: translateX(-100%);
+}
+#home.showNav .home {
+  transform: translateX(0);
 }
 #back-button {
-  position: fixed;
-  top: 100px;
-  left: 480px;
+  position: sticky;
+  top: 10px;
+  left: 430px;
   margin-left: -30px;
+  width: 30px;
+}
+#back-button.rotate img{
+  transform: rotate(90DEG);
+}
+
+#back-button img {
+  transition: transform 250ms ease;
+  cursor: pointer;
+  width: 70px;
+  padding:20px;
+}
+@media only screen and (max-width: 480px) {
+  #back-button {
+    left: auto;
+    right: 0px;
+    margin-left: 0px;
+  }
 }
 .allLinks {
   min-height: 100vh;
-  justify-content: center;
+  justify-content: start;
   text-align: center;
+  padding: 80px 30px 0px 30px;
+  letter-spacing: 0.7px;
+  line-height:1.6em;
+  font-size: 24px;
+}
+.allLinks .link-group {
+  margin-bottom: 30px;
+}
+.link-group img:first-of-type {
+  max-width:40px;
+  margin:0 5px;
+}
+.link-group img:last-of-type {
+  max-width:55px;
+  margin:0 5px;
+}
+
+.allLinks .logo {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.allLinks .logo img {
+  max-width: 150px;
 }
 .allSections,
 .allLinks {
@@ -164,13 +253,46 @@ export default {
   flex-direction: column;
 }
 section {
-  min-height:100vh;
-  padding-top: 10px;
-  text-align: center;
-  padding: 0 20px 0 20px;
+  min-height: 100vh;
+  text-align: left;
+  padding: 60px 50px 0px 50px;
   display: flex;
   flex-direction: column;
-    justify-content: center;
-    padding-bottom:100px;
+  justify-content: start;
+  padding-bottom: 100px;
+  letter-spacing: 0.4px;
+  line-height: 1.2em;
+  text-transform: normal;
+}
+section h1,
+section h2 {
+  line-height: 1.3em;
+}
+section input[type='email'] {
+  border: none;
+  border-bottom: 1px solid black;
+  text-transform: uppercase;
+  font-size: 21px;
+  letter-spacing: 0.4px;
+}
+
+section input[type='submit'] {
+  display: block;
+  background-color: black;
+  color: white;
+  margin-top: 15px;
+  text-transform: uppercase;
+  font-size: 21px;
+  letter-spacing: 0.4px;
+}
+
+@media only screen and (max-width: 480px) {
+  .allLinks {
+    padding: 50px 10px 0px 10px;
+    line-height:1.2em;
+  }
+  section {
+    padding: 40px 20px 0px 20px;
+  }
 }
 </style>
