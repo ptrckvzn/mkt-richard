@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div id="nav" class="home nav-section">
-      <div  :class="arrow" id="back-button" @click="clickBack"><img  src="/static/img/arrow.png"></div>
+      <div  :class="arrow" id="back-button" ><img @click.self="clickBack"  src="/static/img/arrow.png"></div>
       <div class="allLinks">
         <div class="logo">
           <img src="/static/img/logo.png">
@@ -155,11 +155,10 @@ export default {
             global.noscroll = false
           }, 1000)
           if (global.nowaypoint) return
-          if (vm.$parent.showNav || this.element.id !== 'nav') {
-            if (dir === 'down') {
-              vm.$router.replace(this.element.id)
+          if (vm.$parent.showNav) {
+            if (dir === 'up' && this.element.id === 'menu') {
+              vm.$router.replace('nav')
             } else {
-              console.log(this)
               vm.$router.replace(this.element.id)
             }
           }
@@ -216,6 +215,12 @@ export default {
     left: auto;
     right: 0px;
     margin-left: 0px;
+    width: 100%;
+    text-align: right;
+  }
+  #back-button img {
+    margin-right:-20px;
+
   }
 }
 .allLinks {

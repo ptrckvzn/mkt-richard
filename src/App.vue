@@ -115,7 +115,8 @@ export default {
     }
   },
   mounted () {
-    if (this.$route.name !== 'index') this.showNav = true
+    console.log(this.$route.name)
+    if (this.$route.name !== 'richard') this.showNav = true
     let foo = document.querySelector('[href="http://alvarotrigo.com/fullPage/extensions/"]')
     if (foo) { foo.parentElement.style = 'display:none' }
   },
