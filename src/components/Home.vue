@@ -222,7 +222,7 @@ export default {
   min-height: 100vh;
   justify-content: start;
   text-align: center;
-  padding: 80px 30px 0px 30px;
+  padding: 40px 30px 0px 30px;
   letter-spacing: 0.7px;
   line-height:1.6em;
   font-size: 24px;
