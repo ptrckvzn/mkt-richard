@@ -2,23 +2,25 @@ i<template>
   <div id="app">
     <div id="reserve"><a target="_blank" href="https://bookings.seatris.com/restaurants/richard">{{lang === 'en' ? 'booking' : 'reservierung'}}</a></div>
     <div @click="switchLang" id="lang">{{notLang}}</div>
-    <home :class="{showNav:showNav}" @closeNav="showNav = false" :lang="lang" />
+    <home :class="{showNav:showNav}" @closeNav="closeNav" :lang="lang" />
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section"
       v-for="(content,i) in contents"
       :key="i"
       :id="'section' + i"
-      :class="{mirror:content.name === 'richard_orange.mov' || content.name === '_DSF2502-Bearbeitet.jpg'}"
+      :class="{mirror:content.name === 'richard_orange.mov' || content.name === '_DSF2502-Bearbeitet.jpg', 'video-el' : content.type=== 'video'}"
       >
         <video
-         v-if="content.type === 'video'" loop muted data-autoplay  class="fp-bg" :poster="content.path + content.name.replace('mov', 'jpg')">
+        preload="auto"
+         v-if="content.type === 'video'" loop muted class="fp-bg" :poster="content.path + content.name.replace('mov', 'jpg')">
           <source :data-src="content.path + content.name" />
         </video>
         <div v-else class="fp-bg" :style="'background-image:url(' + content.path + content.name + ')'"></div>
-        <div class="floatLogo" v-if="i === 0"><img src="/static/img/logo_big.png"></div>
+        <div class="floatLogo" v-if="i === 0"><a href="/" ><img src="/static/img/logo_big.png"></a></div>
+        <div class="landingImage" v-if="i === 0 && landingImage" v-html="landingImage"/>
       </div>
     </full-page>
-    <router-link @click.native="clickMenu" id="hamburger" to="nav"><img src="/static/img/menu.png"></router-link>
+    <router-link @click.native="clickMenu" id="hamburger" to="nav"><div class="hb"></div><div class="hb"></div><div class="hb"></div></router-link>
   </div>
 </template>
 
@@ -30,9 +32,15 @@ let contents = [
     name: 'richard_paul.mov',
     path: '/static/videos/'
   },
+  // {
+  //   type: 'video',
+  //   name: 'richard_brot.mov',
+  //   path: '/static/videos/'
+  // },
+
   {
-    type: 'video',
-    name: 'richard_brot.mov',
+    type: 'image',
+    name: 'richard_lamps_image.jpg',
     path: '/static/videos/'
   },
   {
@@ -55,11 +63,11 @@ let contents = [
     name: 'richard_celery.mov',
     path: '/static/videos/'
   },
-  {
-    type: 'image',
-    name: 'richard_greensauce.png',
-    path: '/static/videos/'
-  },
+  // {
+  //   type: 'image',
+  //   name: 'richard_greensauce.png',
+  //   path: '/static/videos/'
+  // },
   {
     type: 'image',
     name: 'RICHARD-Interior.jpg',
@@ -80,11 +88,11 @@ let contents = [
     name: '_DSF2502-Bearbeitet.jpg',
     path: '/static/videos/'
   },
-  {
-    type: 'video',
-    name: 'richard_lamps.mov',
-    path: '/static/videos/'
-  },
+  // {
+  //   type: 'video',
+  //   name: 'richard_lamps.mov',
+  //   path: '/static/videos/'
+  // },
   {
     type: 'image',
     name: '_DSF2409.jpg',
@@ -100,6 +108,8 @@ export default {
       showNav: false,
       contents,
       options: {
+        onLeave: this.onLeave,
+        afterLoad: this.afterLoad,
         normalScrollElements: '#nav',
         // licenseKey: 'AF5DCFEF-E50143C7-AE3BDEDE-AF93A31F',
         licenseKey: '8D262CAD-3210481C-BB3740F8-DB065455',
@@ -112,15 +122,46 @@ export default {
   computed: {
     notLang () {
       return this.lang === 'de' ? 'en' : 'de'
+    },
+    landingImage () {
+      return require('./assets/copy/landing_image.md')
     }
   },
   mounted () {
-    console.log(this.$route.name)
     if (this.$route.name !== 'richard') this.showNav = true
-    let foo = document.querySelector('[href="http://alvarotrigo.com/fullPage/extensions/"]')
-    if (foo) { foo.parentElement.style = 'display:none' }
+    let foo = document.querySelector(
+      '[href="http://alvarotrigo.com/fullPage/extensions/"]'
+    )
+    if (foo) {
+      foo.parentElement.style = 'display:none'
+    }
   },
   methods: {
+    afterLoad (origin, destination, direction) {
+      if (!origin) {
+        this.onLeave(origin, destination, direction)
+        return
+      }
+      let el = origin.item
+      if (hasClass(el, 'video-el')) {
+        let vids = el.querySelectorAll('video')
+        if (vids.length) {
+          vids[0].pause()
+        }
+      }
+    },
+    onLeave (origin, destination, direction) {
+      let el = destination.item
+      if (hasClass(el, 'video-el')) {
+        let vids = el.querySelectorAll('video')
+        if (vids.length) {
+          vids[0].play().catch(error => {
+            console.log(error.message)
+            vids[0].play()
+          })
+        }
+      }
+    },
     switchLang () {
       this.lang = this.lang === 'en' ? 'de' : 'en'
     },
@@ -131,25 +172,40 @@ export default {
           'url(http://lorempixel.com/400/200/sports/' + i + ')'
       }
     },
+    closeNav () {
+      this.$refs.fullpage.api.moveSectionDown()
+      this.showNav = false
+    },
     clickMenu () {
-      console.log('clickMenu')
+      this.$refs.fullpage.api.moveSectionDown()
       this.showNav = true
     }
   },
   components: { Home }
 }
+function hasClass (element, className) {
+  if (element.classList) return element.classList.contains(className)
+  else {
+    return new RegExp('(^| )' + className + '( |$)', 'gi').test(
+      element.className
+    )
+  }
+}
 </script>
 
-<style>
+<style lang="scss">
+@import './assets/style/fonts.css';
 html,
 body {
   padding: 0;
   margin: 0;
   text-transform: uppercase;
   color: black;
-  font-family: arial;
+  font-family: 'BodoniSSK', times;
   font-weight: bold;
   font-size: 21px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a,
 a:active,
@@ -175,47 +231,56 @@ a:visited {
   position: fixed;
   top: 20px;
   left: 20px;
-  filter:invert(1);
+  .hb {
+    width: 32px;
+    height: 3px;
+    display: block;
+    background-color: white;
+    margin-bottom: 8px;
+  }
 }
 #hamburger img {
   max-width: 32px;
 }
-#lang, #reserve {
+#lang,
+#reserve {
   position: fixed;
-  top: 20px;
+  top: 0px;
   z-index: 2;
   padding: 6px 6px;
-
 }
 #lang {
-  right: 0px;
+  right: 100px;
   background-color: black;
   color: white;
   cursor: pointer;
 }
 #reserve {
-  right:41px;
+  right: 140px;
   background-color: white;
   color: black;
 }
+.landingImage {
+  text-align: center;
+  img {
+    padding: 10vh 0px;
+    max-height: 100vh;
+    max-width: 100vw;
+  }
+}
 .floatLogo {
   color: white;
-  font-size:100px;
-  text-align:center;
+  text-align: center;
   /* margin-top: calc(50vh - 69px); */
-  margin-top: calc(50vh - 100px);
-  padding: 0px 60px;
+  margin-top: 0;
+  margin: auto;
 }
 .floatLogo img {
-  width:100%;
-  max-width: 700px;
+  background-color: black;
+  padding: 5px;
+  width: 172px;
 }
-@media only screen and (max-width: 480px) {
-  .floatLogo {
-    margin-top: calc(50vh - 150px);
-  }
 
-}
 /*.bg-img {
   width: 100%;
   height: 100vh;
@@ -253,7 +318,7 @@ video {
   height: 100%;
   background-size: 100% 100%;
   background-color: black; /* in case the video doesn't fit the whole page*/
-  background-image: /* our video */ ;
+
   background-position: center center;
   background-size: contain;
   object-fit: cover; /*cover video background */
@@ -276,5 +341,29 @@ video {
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+@media only screen and (max-width: 480px) {
+  .floatLogo {
+    text-align: left;
+    padding-left: 125px;
+    img {
+      max-width: 106px;
+    }
+  }
+  .logo img {
+    max-width: 106px !important;
+  }
+  #lang,
+  #reserve {
+    font-size: 12px;
+    filter: invert(100);
+  }
+  #lang {
+    right: 20px;
+  }
+  #reserve {
+    right: 48px;
+  }
 }
 </style>

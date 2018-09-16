@@ -12,9 +12,12 @@
 <script>
 export default {
   computed: {
-
-    de () { return require('../assets/copy/' + this.md + '_de.md') },
-    en () { return require('../assets/copy/' + this.md + '_en.md') }
+    de () {
+      return require('../assets/copy/' + this.md + '_de.md')
+    },
+    en () {
+      return require('../assets/copy/' + this.md + '_en.md')
+    }
   },
   props: ['lang', 'md']
 }
