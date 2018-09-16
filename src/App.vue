@@ -11,9 +11,9 @@ i<template>
       :class="{mirror:content.name === 'richard_orange.mov' || content.name === '_DSF2502-Bearbeitet.jpg', 'video-el' : content.type=== 'video'}"
       >
         <video
-        preload="auto"
+        preload="metadata"
          v-if="content.type === 'video'" loop muted class="fp-bg" :poster="content.path + content.name.replace('mov', 'jpg')">
-          <source :data-src="content.path + content.name" />
+          <source :src="content.path + content.name" />
         </video>
         <div v-else class="fp-bg" :style="'background-image:url(' + content.path + content.name + ')'"></div>
         <div class="floatLogo" v-if="i === 0"><a href="/" ><img src="/static/img/logo_big.png"></a></div>
@@ -108,6 +108,9 @@ export default {
       showNav: false,
       contents,
       options: {
+        loopBottom: true,
+        touchSensitivity: 1,
+        css3: true,
         onLeave: this.onLeave,
         afterLoad: this.afterLoad,
         normalScrollElements: '#nav',
@@ -133,7 +136,7 @@ export default {
       '[href="http://alvarotrigo.com/fullPage/extensions/"]'
     )
     if (foo) {
-      foo.parentElement.style = 'display:none'
+      foo.parentElement.style.display = 'none !important'
     }
   },
   methods: {
@@ -346,7 +349,7 @@ video {
 @media only screen and (max-width: 480px) {
   .floatLogo {
     text-align: left;
-    padding-left: 125px;
+    padding-left: 100px;
     img {
       max-width: 106px;
     }
