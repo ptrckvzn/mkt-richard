@@ -11,6 +11,7 @@ i<template>
       :class="{mirror:content.name === 'richard_orange.mov' || content.name === '_DSF2502-Bearbeitet.jpg', 'video-el' : content.type=== 'video'}"
       >
         <video
+        :autoplay="isMobile"
         preload="metadata"
          v-if="content.type === 'video'" loop muted class="fp-bg" :poster="content.path + content.name.replace('mov', 'jpg')">
           <source :src="content.path + content.name" />
@@ -26,6 +27,7 @@ i<template>
 
 <script>
 import Home from '@/components/Home'
+import { isMobile } from './assets/helpers'
 let contents = [
   {
     type: 'video',
@@ -104,6 +106,7 @@ export default {
   name: 'App',
   data () {
     return {
+      isMobile: isMobile(),
       lang: 'de',
       showNav: false,
       contents,
