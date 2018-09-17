@@ -119,7 +119,8 @@ export default {
         normalScrollElements: '#nav',
         // licenseKey: 'AF5DCFEF-E50143C7-AE3BDEDE-AF93A31F',
         licenseKey: '8D262CAD-3210481C-BB3740F8-DB065455',
-        parallaxKey: 'cmVzdGF1cmFudC1yaWNoYXJkLmRlX1NPWWNHRnlZV3hzWVhnPXI2dg==',
+        // parallaxKey: 'cmVzdGF1cmFudC1yaWNoYXJkLmRlX1NPWWNHRnlZV3hzWVhnPXI2dg==',
+        parallaxKey: 'bmV0bGlmeS5jb21fU2JRY0dGeVlXeHNZWGc9bmJV',
         parallax: true,
         parallaxOptions: { type: 'cover', property: 'translate' }
       }
