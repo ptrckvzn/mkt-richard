@@ -1,36 +1,25 @@
 ## UNSER AKTUELLES VEGETARISCHES MENU
 
-**RATATOUILLE**  
-MIT NORWEGISCHER JAKOBSMUSCHEL
+**Mozzarella di Bufala**  
+mit Aubergine, Gurke und Zitrone
 
-**MANGOLD MIT SELLERIE**  
-UND ANCHOAS DEL CANTABRICO
+**Junger Sellerie aus dem Ofen**  
+mit Anis und Kräuteremulsion
+
+**Mangold mit Sellerie**  
 Tropea Zwiebel und Buttermilch
 
-**POT AU FEU**  
-VON SOMMERGEMÜSE MIT MASSAMAN CURRY
-
-**MILCHKALBSBRIES MIT ERBSEN**  
-UND SAUCE COTES DU JURA
-
-**MEERÄSCHE MIT SPITZPAPRIKA**  
-UND ARTISCHOCKE
-Sauce Bouillabaise
-
-_ODER_
-
-**ENTRECÔTE  
-VOM BLACK ANGUS RIND**  
-MIT FENCHEL TAJINE UND TAGGIASCA OLIVE
+**Tortellini mit Bohne**  
+Kartoffel, wilder Brokkoli und Gemüsejus
 
 **KÄSEAUSWAHL**
 
-**DESSERT VON KIRSCHE**  
-**UND SCHOKOLADE**
+**Geschmorter Pfirsich**  
+**mit Honig & Rosmarin und Vanille Eis**
 <br>
 <br>
 <br>
-_4 Gänge 68 € / 5 Gänge 82 €_  
-_6 Gänge 92 € / 7 Gänge 100 €_  
+_4 Gänge 58 € / 5 Gänge 68 €_  
+_6 Gänge 78 €_  
 
 \*Alle Preise in Euro inklusive gesetzlicher Mehrwertsteuer.
