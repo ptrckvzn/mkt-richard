@@ -1,41 +1,35 @@
 ## UNSER AKTUELLES MENU
 
-GELBSCHWANZMAKRELE
 
+GELBSCHWANZMAKRELE
 MIT AUBERGINE
 Gurke und Zitrone
 
 
 
 JUNGER SELLERIE
-
 aus dem Ofen mit Anis 
 und Kräuteremusion
 
 
 
 ARTISCHOCKEN A LA BARIGOULE
-
 mit Fenchel, Orange und Speck
 
 
 
 LAMMRAVIOLI
-
 mit verkohltem Lauch
 Lauchbouillon und Oregano
 
 
 
 STREIFENBRASSE
-
 mit Bohnen Cassoulet
 Jus de tomates jaunes
 
 
-
 oder
-
 
 
 GESCHMORTES MILCHKALB
@@ -47,7 +41,6 @@ KÄSEAUSWAHL
 
 
 DESSERT
-
 von Nougat und Schokolade
 Salz-Karamell Eis
 <br>
