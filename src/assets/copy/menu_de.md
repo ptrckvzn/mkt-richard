@@ -2,14 +2,12 @@
 
 GELBSCHWANZMAKRELE
 
-
 MIT AUBERGINE
 Gurke und Zitrone
 
 
 
 JUNGER SELLERIE
-
 
 aus dem Ofen mit Anis 
 und Kräuteremusion
@@ -18,13 +16,11 @@ und Kräuteremusion
 
 ARTISCHOCKEN A LA BARIGOULE
 
-
 mit Fenchel, Orange und Speck
 
 
 
 LAMMRAVIOLI
-
 
 mit verkohltem Lauch
 Lauchbouillon und Oregano
@@ -32,7 +28,6 @@ Lauchbouillon und Oregano
 
 
 STREIFENBRASSE
-
 
 mit Bohnen Cassoulet
 Jus de tomates jaunes
@@ -47,10 +42,11 @@ GESCHMORTES MILCHKALB
 mit Roskoffzwiebeln
 Räucheraal und Lattich
 
+
 KÄSEAUSWAHL
 
-DESSERT
 
+DESSERT
 
 von Nougat und Schokolade
 Salz-Karamell Eis
@@ -60,6 +56,6 @@ Salz-Karamell Eis
 4 Gänge 68 €
 5 Gänge 82 €
 6 Gänge 92 € 
-7 Gänge 100 €_  
+7 Gänge 100 € 
 
 \*Alle Preise in Euro inklusive gesetzlicher Mehrwertsteuer.
