@@ -95,9 +95,14 @@ let contents = [
   //   name: 'richard_lamps.mov',
   //   path: '/static/videos/'
   // },
+  // {
+  //   type: 'image',
+  //   name: '_DSF2409.jpg',
+  //   path: '/static/videos/'
+  // }
   {
     type: 'image',
-    name: '_DSF2409.jpg',
+    name: 'last-collage.jpg',
     path: '/static/videos/'
   }
 ]
@@ -111,6 +116,7 @@ export default {
       showNav: false,
       contents,
       options: {
+        scrollBar: true,
         loopBottom: true,
         touchSensitivity: 1,
         css3: true,
@@ -209,7 +215,7 @@ body {
   text-transform: uppercase;
   color: black;
   font-family: 'BodoniSSK', times;
-  font-weight: bold;
+  font-weight: regular;
   font-size: 21px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -239,15 +245,14 @@ a:visited {
   top: 20px;
   left: 20px;
   .hb {
-    width: 32px;
+    // width: 32px;
+    width: 25.6px;
     height: 3px;
     display: block;
     background-color: white;
-    margin-bottom: 8px;
+    // margin-bottom: 8px;
+    margin-bottom: 6.4px;
   }
-}
-#hamburger img {
-  max-width: 32px;
 }
 #lang,
 #reserve {
@@ -285,7 +290,7 @@ a:visited {
 .floatLogo img {
   background-color: black;
   padding: 5px;
-  width: 172px;
+  width: 137.6px;
 }
 
 /*.bg-img {
@@ -371,6 +376,13 @@ video {
   }
   #reserve {
     right: 48px;
+  }
+
+  #hamburger {
+    .hb {
+      width: 19.2px;
+      margin-bottom: 4.8px;
+    }
   }
 }
 </style>

@@ -6,19 +6,22 @@
       </div>
       <div  :class="arrow" id="back-button" ><img @click.self="clickBack"  src="/static/img/arrow.png"></div>
       <div class="allLinks">
+        <div class="link-group">
+          <img src="/static/img/star.png">
+          <img src="/static/img/hat.png">
+        </div>
         <div class="link-group" v-for="(group, i) in sections" :key="'group-' + i"  >
           <div v-for="(section, j) in group"  :key="'section-' + i + '-' + j" >
             <router-link  :to="section.nav">{{section.name[lang]}}</router-link>
           </div>
         </div>
-        <div class="link-group">
-          <img src="/static/img/star.png">
-          <img src="/static/img/hat.png">
-        </div>
+
       </div>
       <div class="allSections">
         <template v-for="(group, i) in sections"  >
-          <section class="nav-section" v-for="(section, j) in group" :id="section.nav"  :key="'content-section-' + i+'-'+j">
+          <section
+          :class="section.style"
+          class="nav-section" v-for="(section, j) in group" :id="section.nav"  :key="'content-section-' + i+'-'+j">
             <item :lang="lang" :md="section.nav"  />
           </section>
         </template>
@@ -38,13 +41,13 @@ export default {
       routeName: null,
       sections: [
         [
-          {
-            nav: 'about',
-            name: {
-              de: 'Über uns',
-              en: 'About'
-            }
-          },
+          // {
+          //   nav: 'about',
+          //   name: {
+          //     de: 'Über uns',
+          //     en: 'About'
+          //   }
+          // },
           {
             nav: 'menu',
             component: 'MenuComponent',
@@ -88,7 +91,8 @@ export default {
             name: {
               de: 'Kontakt & Reservierung',
               en: 'CONTACT & RESERVATIONS'
-            }
+            },
+            style: 'no-cap'
           }
         ],
         [
@@ -199,6 +203,9 @@ export default {
   transition: transform 600ms ease;
   transform: translateX(-100%);
 }
+.no-cap {
+  text-transform: none;
+}
 #home.showNav .home {
   transform: translateX(0);
 }
@@ -251,7 +258,8 @@ export default {
 .logo img {
   max-width: 172px;
   background-color: black;
-  padding: 5px;
+  /* padding: 5px; */
+  padding: 8px 22px;
 }
 .allSections,
 .allLinks {
@@ -266,7 +274,7 @@ section {
   flex-direction: column;
   justify-content: start;
   padding-bottom: 100px;
-  letter-spacing: 0.4px;
+  letter-spacing: 1.2px;
   line-height: 1.2em;
   text-transform: normal;
 }
