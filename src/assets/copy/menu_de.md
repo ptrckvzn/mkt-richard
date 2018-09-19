@@ -1,36 +1,53 @@
 ## UNSER AKTUELLES MENU
 
-**RATATOUILLE**  
-MIT NORWEGISCHER JAKOBSMUSCHEL
 
-**MANGOLD MIT SELLERIE**  
-UND ANCHOAS DEL CANTABRICO
-Tropea Zwiebel und Buttermilch
+GELBSCHWANZMAKRELE
+MIT AUBERGINE
+Gurke und Zitrone
 
-**POT AU FEU**  
-VON SOMMERGEMÜSE MIT MASSAMAN CURRY
 
-**MILCHKALBSBRIES MIT ERBSEN**  
-UND SAUCE COTES DU JURA
 
-**MEERÄSCHE MIT SPITZPAPRIKA**  
-UND ARTISCHOCKE
-Sauce Bouillabaise
+JUNGER SELLERIE
+aus dem Ofen mit Anis 
+und Kräuteremusion
 
-_ODER_
 
-**ENTRECÔTE  
-VOM BLACK ANGUS RIND**  
-MIT FENCHEL TAJINE UND TAGGIASCA OLIVE
 
-**KÄSEAUSWAHL**
+ARTISCHOCKEN A LA BARIGOULE
+mit Fenchel, Orange und Speck
 
-**DESSERT VON KIRSCHE**  
-**UND SCHOKOLADE**
+
+
+LAMMRAVIOLI
+mit verkohltem Lauch
+Lauchbouillon und Oregano
+
+
+
+STREIFENBRASSE
+mit Bohnen Cassoulet
+Jus de tomates jaunes
+
+
+oder
+
+
+GESCHMORTES MILCHKALB
+mit Roskoffzwiebeln
+Räucheraal und Lattich
+
+
+KÄSEAUSWAHL
+
+
+DESSERT
+von Nougat und Schokolade
+Salz-Karamell Eis
 <br>
 <br>
 <br>
-_4 Gänge 68 € / 5 Gänge 82 €_  
-_6 Gänge 92 € / 7 Gänge 100 €_  
+4 Gänge 68 € / 5 Gänge 82 € / 6 Gänge 92 € / 7 Gänge 100 € 
 
 \*Alle Preise in Euro inklusive gesetzlicher Mehrwertsteuer.
+
+
