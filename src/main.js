@@ -4,8 +4,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueFullPage from 'vue-fullpage.js'
-Vue.use(VueFullPage)
+// import VueFullPage from 'vue-fullpage.js'
+// Vue.use(VueFullPage)
 
 Vue.config.productionTip = false
 

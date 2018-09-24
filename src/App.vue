@@ -11,7 +11,7 @@ i<template>
       :class="{mirror:content.name === 'richard_orange.mov' || content.name === '_DSF2502-Bearbeitet.jpg', 'video-el' : content.type=== 'video'}"
       >
         <video
-        :autoplay="isMobile"
+        autoplay="autoplay"
         preload="metadata"
          v-if="content.type === 'video'" loop muted class="fp-bg" :poster="content.path + content.name.replace('mov', 'jpg')">
           <source :src="content.path + content.name" />
