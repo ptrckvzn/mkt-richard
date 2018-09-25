@@ -335,8 +335,13 @@ a:visited {
   color: white;
   text-align: center;
   /* margin-top: calc(50vh - 69px); */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 0;
   margin: auto;
+  z-index: 100;
 }
 .floatLogo img {
   background-color: black;
@@ -437,7 +442,11 @@ video {
     text-align: left;
     /* margin-top: calc(50vh - 69px); */
     // margin-top: 0;
-    margin-left: 2rem;
+    // margin-left: 2rem;
+    position: fixed;
+    top: 0;
+    left: 2rem;
+    transform: none;
   }
   .floatLogo img {
     padding: 7px 10px;
