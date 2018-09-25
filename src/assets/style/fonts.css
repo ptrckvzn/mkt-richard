@@ -1,8 +1,29 @@
-@font-face {
+/* @font-face {
   font-family: 'BodoniSSK';
   src: url('./BodoniSSK.woff') format('woff'),
     url('./BodoniSSK.svg') format('svg'),
     url('./BodoniSSK.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+} */
+
+/* @font-face {
+  font-family: 'Bodoni';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./BODONIB.woff2') format('woff2'), url('./BODONIB.TTF.woff') format('woff');
+} */
+
+@font-face {
+  font-family: 'Bodoni';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./BODONIN.woff2') format('woff2'), url('./BODONIN.TTF.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-weight: 400;
+  font-style: italic;
+  src: url('./BODONINI.woff2') format('woff2'), url('./BODONINI.TTF.woff') format('woff');
 }

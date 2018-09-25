@@ -1,10 +1,13 @@
 <template>
   <div id="home">
     <div id="nav" class="home nav-section">
-      <div class="logo">
-        <img src="/static/img/logo_big.png">
+      <div class="nav-section-sticky">
+        <div class="logo">
+          <img src="/static/img/logo_big.png">
+        </div>
+        <div  :class="arrow" id="back-button" ><img @click.self="clickBack"  src="/static/img/arrow.png">
+        </div>
       </div>
-      <div  :class="arrow" id="back-button" ><img @click.self="clickBack"  src="/static/img/arrow.png"></div>
       <div class="allLinks">
         <div class="link-group">
           <img src="/static/img/star.png">
@@ -209,32 +212,41 @@ export default {
 #home.showNav .home {
   transform: translateX(0);
 }
-#back-button {
+
+.nav-section-sticky {
   position: sticky;
-  top: 42px;
-  left: 400px;
-  margin-left: -30px;
-  width: 30px;
+  top: 0px;
+  left: 0px;
+}
+
+#back-button {
+  /* margin-left: -30px; */
+  /* width: 30px; */
+  position: absolute;
+  top: 0.9rem;
+  right: 25px;
+  /* border: 1px solid red; */
 }
 #back-button.rotate img {
   transform: rotate(90deg);
 }
-
 #back-button img {
   transition: transform 600ms ease;
   cursor: pointer;
-  width: 70px;
-  padding: 20px;
+  width:  auto;
+  height: 1.80rem;
+  padding: 5px;
 }
 
 .allLinks {
   min-height: 100vh;
-  justify-content: start;
+  justify-content: flex-start;
   text-align: center;
   padding: 40px 30px 0px 30px;
-  letter-spacing: 0.7px;
+  /* letter-spacing: 0.7px; */
   line-height: 1.6em;
-  font-size: 24px;
+  font-size: 1.35rem;
+  text-transform: uppercase;
 }
 .allLinks .link-group {
   margin-bottom: 30px;
@@ -248,19 +260,42 @@ export default {
   margin: 0 5px;
 }
 
+/* .logo {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+} */
+
+/* .logo img {
+  max-width: 172px;
+  background-color: black;
+  padding: 8px 22px;
+} */
+
 .logo {
+  color: white;
+  text-align: center;
+  /* margin-top: calc(50vh - 69px); */
+  margin-top: 0;
+  margin: auto;
+
   position: sticky;
   top: 0px;
   width: 100%;
   text-align: center;
 }
-
 .logo img {
-  max-width: 172px;
+  padding: 6px 10px;
   background-color: black;
-  /* padding: 5px; */
-  padding: 8px 22px;
+  display: inline-block;
+  // padding: 0.5em;
+  // padding: 9px;
+  // width: 137.6px;
+  height: calc(1rem + 12px);
+  width: auto;
 }
+
 .allSections,
 .allLinks {
   display: flex;
@@ -275,7 +310,7 @@ section {
   justify-content: start;
   padding-bottom: 100px;
   letter-spacing: 1.2px;
-  line-height: 1.2em;
+  /* line-height: 1.2em; */
   text-transform: normal;
 }
 section h1,
@@ -303,7 +338,7 @@ section input[type='submit'] {
 @media only screen and (max-width: 480px) {
   #back-button {
     left: auto;
-    right: 0px;
+    right: 1rem;
     margin-left: 0px;
     width: 100%;
     text-align: right;

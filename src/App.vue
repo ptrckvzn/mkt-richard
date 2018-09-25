@@ -1,7 +1,5 @@
-i<template>
+<template>
   <div id="app">
-    <div id="reserve"><a target="_blank" href="https://bookings.seatris.com/restaurants/richard">{{lang === 'en' ? 'booking' : 'reservierung'}}</a></div>
-    <div @click="switchLang" id="lang">{{notLang}}</div>
     <home :class="{showNav:showNav}" @closeNav="closeNav" :lang="lang" />
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section"
@@ -21,7 +19,14 @@ i<template>
         <div class="landingImage" v-if="i === 0 && landingImage" v-html="landingImage"/>
       </div>
     </full-page>
-    <router-link @click.native="clickMenu" id="hamburger" to="nav"><div class="hb"></div><div class="hb"></div><div class="hb"></div></router-link>
+    <div class="siteLinks">
+      <div id="reserve"><a target="_blank" href="https://bookings.seatris.com/restaurants/richard">{{lang === 'en' ? 'booking' : 'reservierung'}}</a></div>
+      <div @click="switchLang" id="lang">{{notLang}}</div>
+    </div>
+    <router-link class="siteNav" @click.native="clickMenu"  to="nav">
+      <div id="hamburger"><div class="hb"></div><div class="hb"></div><div class="hb"></div></div>
+      <div id="site-menu">Menu</div>
+    </router-link>
   </div>
 </template>
 
@@ -102,7 +107,7 @@ let contents = [
   // }
   {
     type: 'image',
-    name: 'last-collage.jpg',
+    name: 'RR-WEBSITE-BolkBG.jpg',
     path: '/static/videos/'
   }
 ]
@@ -212,13 +217,25 @@ html,
 body {
   padding: 0;
   margin: 0;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: black;
-  font-family: 'BodoniSSK', times;
-  font-weight: regular;
-  font-size: 21px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Bodoni', times;
+  font-weight: 400;
+  font-size: 16px; //21px;
+  letter-spacing: 0.06em;
+  line-height: 1.6em;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  // text-decoration: underline;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  letter-spacing: 0.06em;
+  line-height: 1.2em;
 }
 a,
 a:active,
@@ -226,7 +243,7 @@ a:hover,
 a:visited {
   text-decoration: none;
   color: black;
-  weight: 700;
+  // weight: 700;
 }
 * {
   box-sizing: border-box;
@@ -240,40 +257,74 @@ a:visited {
   overflow: hidden;
   position: relative;
 }
-#hamburger {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  .hb {
-    // width: 32px;
-    width: 25.6px;
-    height: 3px;
-    display: block;
-    background-color: white;
-    // margin-bottom: 8px;
-    margin-bottom: 6.4px;
-  }
-}
-#lang,
-#reserve {
+.siteNav,
+.siteLinks {
   position: fixed;
   top: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  right: 10vw;
+}
+.siteLinks {
+  right: 10vw;
+}
+.siteNav {
+  left: 20px;
+}
+#hamburger {
+  // position: fixed;
+  // top: 0px;
+  // left: 40px;
+  background-color: white;
+  padding: 9px 8px 8px;
+  // display: flex;
+  // flex-flow: column nowrap;
+
+  .hb {
+    // width: 32px;
+    width: 15px;
+    height: 2px;
+    display: block;
+    background-color: black;
+    // margin-bottom: 8px;
+  }
+  .hb:not(:last-child) {
+    margin-bottom: 3px;
+  }
+}
+// #menu {
+//   background: white;
+//   text-transform:
+// }
+#site-menu,
+#lang,
+#reserve {
   z-index: 2;
-  padding: 6px 6px;
+  padding: 6px 10px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 #lang {
-  right: 100px;
+  // right: 100px;
   background-color: black;
   color: white;
   cursor: pointer;
 }
+#site-menu,
 #reserve {
-  right: 140px;
+  // right: 140px;
   background-color: white;
   color: black;
 }
+#site-menu {
+  padding-left: 0;
+}
 .landingImage {
-  text-align: center;
+  // text-align: center;
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
   img {
     padding: 10vh 0px;
     max-height: 100vh;
@@ -289,8 +340,13 @@ a:visited {
 }
 .floatLogo img {
   background-color: black;
-  padding: 5px;
-  width: 137.6px;
+  display: inline-block;
+  // padding: 0.5em;
+  // padding: 9px;
+  // width: 137.6px;
+  padding: 7px 10px;
+  height: calc(1rem + 14px);
+  width: auto;
 }
 
 /*.bg-img {
@@ -356,32 +412,56 @@ video {
 }
 
 @media only screen and (max-width: 480px) {
-  .floatLogo {
-    text-align: left;
-    padding-left: 100px;
-    img {
-      max-width: 106px;
-    }
-  }
+  // .floatLogo {
+  //   text-align: left;
+  //   padding-left: 100px;
+  //   img {
+  //     max-width: 106px;
+  //   }
+  // }
   .logo img {
     max-width: 106px !important;
+  }
+  .siteLinks {
+    right: 0;
+    // left: 50%;
+    // bottom: 0;
+    // top: unset;
+    // transform: translateX(-50%);
+  }
+  .siteNav {
+    left: 0;
+  }
+  .floatLogo {
+    color: white;
+    text-align: left;
+    /* margin-top: calc(50vh - 69px); */
+    // margin-top: 0;
+    margin-left: 2rem;
+  }
+  .floatLogo img {
+    padding: 7px 10px;
+    height: calc(1rem + 13px);
   }
   #lang,
   #reserve {
     font-size: 12px;
-    filter: invert(100);
+    padding: 8px 10px;
+    // filter: invert(100);
   }
   #lang {
-    right: 20px;
+    // right: 20px;
   }
   #reserve {
-    right: 48px;
+    // right: 48px;
   }
-
+  #site-menu {
+    display: none;
+  }
   #hamburger {
     .hb {
-      width: 19.2px;
-      margin-bottom: 4.8px;
+      // width: 19.2px;
+      // margin-bottom: 4.8px;
     }
   }
 }
